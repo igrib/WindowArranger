@@ -6,7 +6,7 @@ This is a script you can add to Mac OS automator to allow you to use a keyboard 
 
 <img src="docs/screenshots/arrangement.jpg">
 
-##How to install it?
+## How to install it?
 1. Open Automator.app
 2. Create New Service 
 <img src="docs/screenshots/step2.jpg">
@@ -21,10 +21,10 @@ This is a script you can add to Mac OS automator to allow you to use a keyboard 
 <img src ="docs/screenshots/step8.jpg">
 9. Set the keyboard shortcut you want. For example: ⌥⌘← (Option + Command + Left Arrow)
 
-##How it works? 
+## How it works? 
 1. Gets the size of the screen and calculates dimensions of half-screen and quarter screen
 2. See if the program has been run before and if it has checks a temporary file if it hasn't it creates a temporary file.
 3. Cycles through the different size options for the active window.
 
-##Caveats
+## Caveats
 I haven't tested it on multiple screens yet. 
