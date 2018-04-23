@@ -1,0 +1,49 @@
+--Get desktop size
+tell application "Finder" to get the bounds of the window of the desktop
+copy result as list to {0, 0, desktopSizeWidth, desktopSizeHeight}
+
+--Define sizes
+set quarterTopRight to {desktopSizeWidth / 2, 0, desktopSizeWidth, desktopSizeHeight / 2} --Left Side, Top, Right Side, Bottom
+set quarterBottomRight to {desktopSizeWidth / 2, desktopSizeHeight / 2, desktopSizeWidth, desktopSizeHeight} --Left Side, Top, Right Side, Bottom
+set halfRight to {desktopSizeWidth / 2, 0, desktopSizeWidth, desktopSizeHeight} --Left Side, Top, Right Side, Bottom
+set halfLeft to {0, 0, desktopSizeWidth / 2, desktopSizeHeight} --Left Side, Top, Right Side, Bottom
+set quarterTopLeft to {0, 0, desktopSizeWidth / 2, desktopSizeHeight / 2} --Left Side, Top, Right Side, Bottom
+set quarterBottomLeft to {0, desktopSizeHeight / 2, desktopSizeWidth / 2, desktopSizeHeight} --Left Side, Top, Right Side, Bottom
+set fullScreen to {0, 0, desktopSizeWidth, desktopSizeHeight} --Left Side, Top, Right Side, Bottom
+set availableSizes to {quarterTopRight, quarterBottomRight, halfRight, halfLeft, quarterTopLeft, quarterBottomLeft, fullScreen}
+
+--Check how many times we ran it and record this run in a temp file
+tell application "System Events" to get path to temporary items from user domain as string
+copy result to tempDir
+set tempFileName to "WindowArchiverTmp1"
+
+set fp to open for access file (tempDir & tempFileName) with write permission
+
+if (get eof fp) > 0 then -- check if the file is empty
+	set runCounter to read fp for 1
+else
+	set runCounter to 1
+end if
+
+if runCounter < (count of availableSizes) then
+	set runCounter to runCounter + 1 as text
+else
+	set runCounter to 1 as text
+end if
+
+write runCounter to fp starting at 1 for 1
+close access fp
+
+--Look up the front most application. This is the one we will move
+tell application "System Events"
+	set frontApp to first application process whose frontmost is true
+	set frontAppName to name of frontApp
+end tell
+
+
+--Set the size of the window
+set setToSize to item runCounter of availableSizes
+tell application frontAppName to set bounds of window 1 to setToSize
+
+
+
