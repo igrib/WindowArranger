@@ -4,7 +4,7 @@ Script to arrange windows on MacOS
 ## What it does?
 This is a script you can add to Mac OS automator to allow you to use a keyboard shortcut to align windows either as full-screen, top-right, top-left, bottom-right, bottom-left, left-half, and right-half. 
 
-<img src="docs/screenshots/arrangement.jpg">
+<img src="docs/screenshots/Arrangement.jpg">
 
 ## How to install it?
 1. Open Automator.app
