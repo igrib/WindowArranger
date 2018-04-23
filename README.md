@@ -2,7 +2,7 @@
 Script to arrange windows on MacOS
 
 ## What it does?
-This is a script you can add to Mac OS automator to allow you to use a keyboard shortcut to align windows either as full-screen, top-right, top-left, bottom-righ, bottom-left, left-half, and right-half. 
+This is a script you can add to Mac OS automator to allow you to use a keyboard shortcut to align windows either as full-screen, top-right, top-left, bottom-right, bottom-left, left-half, and right-half. 
 
 <img src="docs/screenshots/arrangement.jpg">
 
@@ -16,10 +16,10 @@ This is a script you can add to Mac OS automator to allow you to use a keyboard 
 <img src="docs/screenshots/step4.jpg">
 5. Now Copy the script Paste in the Script
 6. Save as Window Arranger (File -> Save As)
-7. Now open up system prefences -> keyboard -> Keyboard Shortcuts -> Services
+7. Now open up system preferences -> keyboard -> Keyboard Shortcuts -> Services
 8. Select Window Arranger
 <img src ="docs/screenshots/step8.jpg">
-9. Set the keyboard shortcut you want. For example: ⌥⌘← (Option + Command + Left Arrrow)
+9. Set the keyboard shortcut you want. For example: ⌥⌘← (Option + Command + Left Arrow)
 
 ##How it works? 
 1. Gets the size of the screen and calculates dimensions of half-screen and quarter screen
